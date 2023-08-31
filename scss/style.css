@@ -48,7 +48,6 @@ aside::after {
 .main nav > ul li {
   padding: 20px;
   margin: 10px;
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   /* border: 1px solid red; */
@@ -69,11 +68,67 @@ aside::after {
 }
 
 .card {
-  width: 250px;
-  height: 150px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  justify-items: center; */
+  width: 25rem;
+  height: 25rem;
   border-radius: 1rem;
   background-color: rgb(255, 255, 255);
   filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
-  padding: 1rem;
+  padding: 0.5rem;
   margin: 0.5rem;
+}
+.card .header {
+  display: flex;
+  flex-direction: row;
+  /* align-items: center;
+  justify-items: center; */
+  background-color: limegreen;
+  margin: 0;
+  padding: 0.25rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  justify-content: space-between;
+}
+.card .content {
+  display: flex;
+  flex-direction: row;
+  /* align-items: center;
+  justify-items: center; */
+  background-color: aqua;
+  padding: 0.5rem;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+}
+.card .content .clock-face {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  border: 1rem red;
+  border-style: double;
+  background-color: bisque;
+  position: relative;
+}
+.card .content .clock-face .hand1 {
+  width: 0.5rem;
+  height: 50%;
+  border: 1px dashed orangered;
+  background-color: black;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+}
+.card .footer {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  justify-items: center; */
+  background-color: cornflowerblue;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }/*# sourceMappingURL=style.css.map */
