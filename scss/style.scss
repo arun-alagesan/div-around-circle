@@ -1,11 +1,12 @@
+@import "./mixins.scss";
 html,
 body {
     margin: 0;
     padding: 0;
-    min-height: 100vh;
+    min-height: 100dvh;
     display:flex;
     flex-direction: row;
-    min-width: 100vw;
+    min-width: 100dvw;
 }
 body > *{
     margin-top: 0;
@@ -20,8 +21,9 @@ aside{
     background-color: rgba(255,255,255,1);
     filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
     // min-width: 15rem;
-    min-height: 100vh;
-    width: 50%;
+    min-height: 100dvh;
+    min-width: 12rem;
+    width: 12rem;
 
     /* &::after{
         content: " ";
@@ -68,11 +70,59 @@ aside{
 }
  $card-padding : .75rem;
 .card{
-    width: 250px;
-    height: 150px;
-    border-radius: .5rem + $card-padding;
+    @include flex(column);
+    width: 20rem;
+    height: 20rem;
+    border-radius: .75rem + $card-padding;
     background-color: rgba(255,255,255,1);
     filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
     padding: $card-padding;
     margin: .5rem;
+
+    .header{
+        @include flex(row);
+        background-color: limegreen;
+        margin: 0;
+        padding: .25rem;
+        border-top-left-radius: .5rem;
+        border-top-right-radius: .5rem;
+        justify-content: space-between;
+    }
+    .content{
+        @include flex(row);
+        background-color: aqua;
+        padding: .5rem;
+        flex-grow: 1;
+        align-items: center;
+        justify-content: center;
+
+        .clock-face{
+            width: 90%;
+            height: 90%;
+            border-radius: 50%;
+            // padding:.5rem;
+            border: 1rem red;
+            border-style: double;
+            background-color: bisque;
+            position: relative;
+            
+            .hand1{
+                width: .5rem;
+                height: 50%;
+                border: 1px dashed orangered;
+                background-color: black;
+                left:50%;
+                top:50%;
+                position: absolute;
+            }
+        }
+    }
+    .footer{
+        @include flex(column);
+        background-color: cornflowerblue;
+        border-bottom-left-radius: .5rem;
+        border-bottom-right-radius: .5rem;
+        padding-left :.5rem;
+        padding-right: .5rem;
+    }
 }
