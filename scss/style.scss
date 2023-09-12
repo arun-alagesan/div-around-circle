@@ -23,7 +23,7 @@ aside{
     min-height: 100vh;
     width: 50%;
 
-    &::after{
+    /* &::after{
         content: " ";
         background-color: orange;
         width:50px;
@@ -31,7 +31,7 @@ aside{
         border-radius: 50%;
         position:absolute;
         top:1rem;
-    }
+    } */
 }
 
 .main{
@@ -66,13 +66,13 @@ aside{
         flex-wrap: wrap;
     }
 }
-
+ $card-padding : .75rem;
 .card{
     width: 250px;
     height: 150px;
-    border-radius: 1rem;
+    border-radius: .5rem + $card-padding;
     background-color: rgba(255,255,255,1);
     filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
-    padding: 1rem;
+    padding: $card-padding;
     margin: .5rem;
 }
